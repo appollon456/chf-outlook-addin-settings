@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CHF Add-in Settings</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; padding: 16px; }
+    label { display:block; margin: 12px 0 6px; }
+    input { padding: 8px; width: 320px; max-width: 100%; }
+    button { margin-top: 12px; padding: 8px 14px; cursor:pointer; }
+    small { color:#666 }
+    .ok { margin-top: 10px; color: #0a0; }
+  </style>
+</head>
+<body>
+  <h2>CHF Add-in Settings</h2>
+  <p>This page just proves your add-in can open a taskpane. We’ll add real settings later.</p>
+
+  <label for="tabName">Ribbon tab name (for reference only on this page)</label>
+  <input id="tabName" type="text" value="CHF" />
+  <div><small>To change the tab label in Outlook, you’ll edit one line in the manifest and re-add it.</small></div>
+
+  <button id="save">Pretend Save</button>
+  <div id="msg" class="ok" hidden>Saved! (Not really yet — just confirming the pane loads.)</div>
+
+  <script>
+    document.getElementById('save').addEventListener('click', () => {
+      document.getElementById('msg').hidden = false;
+    });
+  </script>
+</body>
+</html>
